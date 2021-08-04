@@ -59,7 +59,7 @@ class UserSignupSerializer(serializers.Serializer):
         """ handle user and profile creation """
         data.pop('password_confirmation')
 
-        user = User.objects.create(
+        user = User.objects.create_user(
             username=data['username'],
             password=data['password'],
             first_name=data['first_name'],

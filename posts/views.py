@@ -31,7 +31,7 @@ class PostsViewSet(mixins.CreateModelMixin,
         """ Save post's author """
         post = serializer.save()
         user = self.request.user
-        Author.objects.create(user=user, post=post)
+        Author.objects.create(author=user, post=post)
 
     def get_permissions(self):
         """ Assign permissions based on action """
