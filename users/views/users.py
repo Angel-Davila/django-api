@@ -23,7 +23,6 @@ class UserListView (ListAPIView):
     permission_classes = [IsAuthenticated]
     pagination_class = PageNumberPagination
 
-class ProfileCompletionViewSet()
 
 @api_view(['POST'])
 def signup(request):
