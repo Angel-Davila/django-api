@@ -14,7 +14,7 @@ class ProfileSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class UserSerializer(serializers.ModelSerializer):
-    """ User Serializer """
+    """ User Serializer data"""
 
     profile = ProfileSerializer(read_only=True)
 
