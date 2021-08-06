@@ -11,9 +11,13 @@ class IsOwnProfile(BasePermission):
     ''' Check if the user try to edit its own template '''
 
     def has_object_permission(self, request, view, abj):
+        user_id = request.path.split('/')
+        user_id = int(user_id[2])
         try:
-            User.objects.get(username=request.user.username)
+            user = User.objects.get(username=request.user.username)
+            if user.id == user_id:
+                return True    
         except User.DoesNotExist:
             return False
 
-        return True 
+        

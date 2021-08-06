@@ -11,17 +11,38 @@ class ProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Profile
-        fields = '__all__'
+        fields=['age','country','city','followers','likes','posts','profile_picture','header_img']
+'
 
 class UserSerializer(serializers.ModelSerializer):
     """ User Serializer """
 
-    profile = ProfileSerializer(read_only=True)
+    profile = ProfileSerializer()
 
     class Meta:
+    
         model = User
-        fields = ['username', 'first_name', 'last_name', 'profile']
-        
+        fields = ['id', 'username', 'first_name', 'last_name', 'profile']
+    
+    def update(self, instance, validated_data):
+    
+        profile_data = validated_data.pop('profile')
+        profile = instance.profile
+
+        instance.username = validated_data.get('username', instance.username)
+        instance.first_name = validated_data.get('first_name', instance.first_name)
+        instance.last_name = validated_data.get('last_name', instance.last_name)
+        instance.email = validated_data.get('email', instance.email)
+        instance.save()
+
+        profile.age = profile_data.get('age', profile.age)
+        profile.city = profile_data.get('city', profile.city)
+        profile.country = profile_data.get('country', profile.country)
+        profile.profile_picture = profile_data.get('profile_picture', profile.profile_picture)
+        profile.header_img = profile_data.get('header_img', profile.header_img)
+        profile.save()
+
+        return instance    
         
 class NewUserSerializer(serializers.ModelSerializer):
     ''' Return the data for a new user '''
