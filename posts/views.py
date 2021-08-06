@@ -4,10 +4,10 @@
 from rest_framework import viewsets, mixins
 from rest_framework import permissions
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
 
 # Permissions
 from posts.permissions import IsAuthor
+from rest_framework.permissions import IsAuthenticated
 
 # Models
 from posts.models import Post, Author

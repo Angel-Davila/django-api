@@ -8,13 +8,15 @@ from django.conf.urls.static import static
 from users.views import users as users_views
 from users.views.login import UserLoginAPIView as login
 from posts.views import PostsViewSet
+from users.views.users import ProfileCompletionViewSet
+
 
 #Django REST framework
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register(r'posts',PostsViewSet, basename='posts')
-
+router.register(r'profile', ProfileCompletionViewSet, basename='profile')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
