@@ -171,9 +171,11 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #Cloudinary.config
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'django-api-greenhouse',
-    'API_KEY': '955461364712638',
-    'API_SECRET': 'Cd7JlWQk1oKmahk2ORwKw5y8Y0Y',
+    'CLOUD_NAME': 'marcosclouddatabase',
+
+    'API_KEY': '716477326682389',
+
+    'API_SECRET': '_A6jam-SuEqBj_OoO2biBeLa7G0',
 }
 
 #django REST Framework

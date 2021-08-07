@@ -25,7 +25,7 @@ class PostsViewSet(mixins.CreateModelMixin,
     """ Posts Model ViewSet """
 
     queryset = Post.objects.all()
-    serializer_class = PostModelSerializer
+    serializer = PostModelSerializer
 
     def perform_create(self, serializer):
         """ Save post's author """
