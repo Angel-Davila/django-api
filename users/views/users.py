@@ -31,7 +31,7 @@ class UserListView (ListAPIView):
 class ProfileCompletionViewSet(mixins.UpdateModelMixin,
                                mixins.RetrieveModelMixin,
                                 viewsets.GenericViewSet):
-    ''' Complete a user information '''
+    ''' Complete a user information data'''
 
     queryset = User.objects.all()
     serializer_class = UserSerializer
