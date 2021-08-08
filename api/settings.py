@@ -154,34 +154,29 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-
-
 STATICFILE_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
 
 MEDIA_URL = '/media/'
-DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
 
+
+DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
 #Cloudinary.config
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'marcosclouddatabase',
-
-    'API_KEY': '716477326682389',
-
-    'API_SECRET': '_A6jam-SuEqBj_OoO2biBeLa7G0',
+    'CLOUD_NAME': 'django-api-greenhouse',
+    'API_KEY': '955461364712638',
+    'API_SECRET': 'Cd7JlWQk1oKmahk2ORwKw5y8Y0Y',
 }
 
 #django REST Framework
-
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': ('rest_framework.renderers.JSONRenderer',
                                  ),
